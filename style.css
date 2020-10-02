@@ -1,0 +1,223 @@
+* {
+    /* I like to do this, prefrence */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color:inherit
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+header {
+    /**/
+    position: fixed;
+    z-index: -1;
+    font-family: 'Source Sans Pro', sans-serif;
+    width: 100vw;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #f8f8f8;
+    background-image: url(hero.jpg);
+    background-size: cover;
+}
+
+.black-overlay {
+    position: absolute;
+    background-color: black;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: .2;
+}
+
+header > h1 {
+    z-index: 2;
+    opacity: .8;
+    line-height: .9;
+    font-size: calc( (60px - 320px * 0.10185) + 10.18519vw);
+}
+
+header > p {
+    z-index: 2;
+    opacity: .8;
+    margin-top: 60px;
+    font-size: min(5vw,18px);
+    width: 90%;
+    text-align: center;
+    max-width: 25vw;
+}
+
+#nav-bar {
+    position: fixed;
+    top: 20%;
+    right:0px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+#nav-bar.show {
+    position: fixed;
+    top: 20%;
+    right:0px;
+    opacity: 1;
+    transition: .5s;
+    pointer-events: all;
+}
+
+#nav-bar ul {
+    padding-right: 15px;
+}
+
+#nav-bar ul li {
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    list-style-type: none;
+    text-align: end;
+    transition: .1s;
+    cursor: pointer;
+    position: relative;
+}
+
+#nav-bar ul li::before {
+    content: "";
+    width: 0px;
+    top: 50%;
+    transform: translateY(50%);
+    right: 0px;
+    height: 2px;
+    background-color: #fff;
+    position: absolute;
+    transition: .1s;
+}
+
+#nav-bar ul li:hover {
+    padding-right: 20px;
+}
+
+#nav-bar ul li:hover::before {
+    width: 15px;
+    background-color: #000;
+}
+
+
+#website {
+    z-index: 3;
+    width: 100vw;
+    background-color: white;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    transition: opacity .2s;
+    padding-top: 90vh;
+    padding-bottom: 248px;
+}
+
+#website.show {
+    pointer-events: all;
+    user-select: all;
+    opacity: 1;
+}
+
+[animate-on-scroll] {
+    opacity: 0;
+    transform: translateY(100px);
+    transition: 1s;
+}
+
+[animate-on-scroll].scrolled {
+    opacity: inherit;
+    transform: translateY(0px);
+}
+
+#background-text {
+    font-family: 'Source Sans Pro', sans-serif;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    opacity: .02;
+    font-size: 35vw;
+    pointer-events: none;
+    font-weight: 400;
+    letter-spacing: 30px;
+    transition: .5s;
+}
+
+#background-text.switch {
+    opacity: 0;
+}
+
+.container {
+    width: 60%;
+    margin-left: 20%;
+}
+
+#website p {
+    font-weight: 400;
+    font-family: 'Piazzolla', serif;
+    font-size: min(32px,6vw);
+}
+
+#about {
+    margin-top: 200px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#about > div {
+    margin-top: 100px;
+    height: fit-content;
+    position: relative;
+}
+
+#about > div > h1 {
+    
+    top: 50%;
+    font-family: 'Piazzolla', serif;
+    font-size: min(32px,4vw);
+    left: 10%;
+    background-color: black;
+    padding: 20px;
+    color: #fff;
+    position: absolute;
+}
+
+#about > div > .about-image {
+    width: 80%;
+    margin-left: 20%;
+}
+
+#about > div[reverse] > .about-image {
+    width: 80%;
+    margin-left: 0%;
+}
+
+
+#about > div[reverse] > h1 {
+    right: 10%;
+    left: unset;
+    text-align: end;
+}
+
+#about a {
+    margin-top: 24px;
+    font-family: 'Piazzolla', serif;
+    font-size: 32px;
+}
+
+#leave {
+    margin-top: 400px;
+}
