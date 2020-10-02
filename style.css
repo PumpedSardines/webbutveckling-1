@@ -121,7 +121,6 @@ header > p {
     user-select: none;
     transition: opacity .2s;
     padding-top: 90vh;
-    padding-bottom: 248px;
 }
 
 #website.show {
@@ -220,4 +219,16 @@ header > p {
 
 #leave {
     margin-top: 400px;
+}
+
+footer {
+    width: 100vw;
+    height: 100px;
+    margin-top: 248px;
+    background-color: black;
+    color: blanchedalmond;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
